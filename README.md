@@ -1,6 +1,6 @@
 # How this project works
 To use this project just clone the repo and run the ex.py code which will write and save 3 csv files as shown in the repo. Or, in the Jupyter Notebook
-run the last cell and it'll do the same as the .py. 
+run the all the cells and it'll do the same as the .py. 
 
 # This project as a microservice
 To showcase what this project could look like in a live setting I set up a basic microservice workflow. To achieve the same results above,
