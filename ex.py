@@ -4,16 +4,21 @@ import numpy as np
 
 
 
+
 class minor_class:
+
+    # <18 minors in poverty
 
     def __init__(self) -> None:
         self.url = 'https://api.census.gov/data'
         self.dataset = "/timeseries/poverty/saipe?"
-        self.variable = 'get=NAME,SAEPOV0_17_PT'
+        self.variable = 'get=NAME,SAEPOV0_17_PT' 
         self.county = '&for=county:201'
         self.state = '&in=state:48'
         self.year = '&time=2018'
         self.apikey = '&key=339cb547571cda5f3e85d818a501d3821e13077a'
+
+    #constructs url and store response 
 
     def call_url(self):
         assembled_url = f'{self.url}{self.dataset}{self.variable}{self.county}{self.state}{self.year}{self.apikey}'
@@ -21,7 +26,7 @@ class minor_class:
         return getrequest
 
    
-
+    # pandas dataframe where rows are a numpy array of the api response. then convert this to csv
     def to_csv(self):
         arr = self.call_url()
         headers = ['county_name', '<18_in_poverty', 'year', 'state_id', 'county_id']
